@@ -1,6 +1,6 @@
 .div-header {
   align-items: center;
-  background-image: url("../planets.jpg");
+  background-image: url('../planets.jpg');
   background-size: cover;
   display: flex;
   flex-direction: column;
