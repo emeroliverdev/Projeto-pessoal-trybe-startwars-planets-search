@@ -1,9 +1,15 @@
 import React, { useContext } from 'react';
 import StartWarsContext from '../context/StartWarsContext';
+import './table.css';
 
 function Table() {
-  const { data } = useContext(StartWarsContext);
-  // console.log(data);
+  const { data, searchName } = useContext(StartWarsContext);
+  const { filterByName } = searchName;
+  const { name } = filterByName;
+  // console.log(filterByName);
+
+  const planetFilterByName = data.filter((planet) => planet.name.toLowerCase()
+    .includes(name.toLowerCase()));
 
   return (
     <div>
@@ -26,7 +32,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          { data.map((element) => (
+          { planetFilterByName.map((element) => (
             <tr key={ element.name }>
               <td>{ element.name }</td>
               <td>{ element.rotation_period }</td>
