@@ -9,19 +9,35 @@ function StartWarsProvider({ children }) {
       name: '',
     },
   });
+  const [filterByNumericValues, setFilterByNumericValues] = useState([]);
+  const [selectFilterNumber, setSelectFilterNumber] = useState({
+    column: 'population,', comparison: 'maior que', value: 0,
+  });
+  const [filteredData, setFilteredData] = useState([]);
+  const [optionsSelect, setOptionsSelect] = useState(['population', 'orbital_period',
+    'diameter', 'rotation_period', 'surface_water']);
 
   const fetchStartWars = async () => {
     const request = await fetch('https://swapi-trybe.herokuapp.com/api/planets/');
     const resquestJson = await request.json();
     const { results } = resquestJson;
     setData(results);
+    setFilteredData(results);
   };
 
   const contextValue = {
     data,
     searchName,
+    filterByNumericValues,
+    selectFilterNumber,
+    filteredData,
+    optionsSelect,
     setData,
     setSearchName,
+    setFilterByNumericValues,
+    setSelectFilterNumber,
+    setFilteredData,
+    setOptionsSelect,
   };
 
   useEffect(() => {

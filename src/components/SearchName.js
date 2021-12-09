@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import './header.css';
+import './searchName.css';
 import StartWarsContext from '../context/StartWarsContext';
 
-function Header() {
+function SearchName() {
   const { searchName, setSearchName } = useContext(StartWarsContext);
 
   function handleChange({ target }) {
@@ -10,7 +10,7 @@ function Header() {
     setSearchName({ filterByName: { name: value } });
   }
   return (
-    <div className="div-header">
+    <div className="div-searchName">
       <h3>Projeto Start Wars Planets - Trybe</h3>
       <input
         data-testid="name-filter"
@@ -24,4 +24,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default SearchName;

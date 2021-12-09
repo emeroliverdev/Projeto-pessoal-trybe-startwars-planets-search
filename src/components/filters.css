@@ -1,19 +1,8 @@
-.div-header {
+.div-filters {
   align-items: center;
   background-image: url('../planets.jpg');
   background-size: cover;
   display: flex;
   flex-direction: column;
   height: 290px;
-}
-
-.search-name {
-  margin-bottom: 10px;
-  margin-top: 0;
-  width: 350px;
-}
-
-h3 {
-  color: darkgray;
-  margin-bottom: 10px;
 }
