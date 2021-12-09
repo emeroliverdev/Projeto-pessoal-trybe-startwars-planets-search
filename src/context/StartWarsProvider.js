@@ -11,7 +11,7 @@ function StartWarsProvider({ children }) {
   });
   const [filterByNumericValues, setFilterByNumericValues] = useState([]);
   const [selectFilterNumber, setSelectFilterNumber] = useState({
-    column: 'population,', comparison: 'maior que', value: 0,
+    column: 'population', comparison: 'maior que', value: 0,
   });
   const [filteredData, setFilteredData] = useState([]);
   const [optionsSelect, setOptionsSelect] = useState(['population', 'orbital_period',

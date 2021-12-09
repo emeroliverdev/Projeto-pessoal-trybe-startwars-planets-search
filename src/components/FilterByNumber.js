@@ -7,8 +7,6 @@ function FilterByNumber() {
     filteredData, setData, optionsSelect, setOptionsSelect,
   } = useContext(StartWarsContext);
 
-  console.log(selectFilterNumber);
-
   function handleChange({ target }) {
     const { name, value } = target;
     setSelectFilterNumber({ ...selectFilterNumber, [name]: value });
@@ -17,6 +15,7 @@ function FilterByNumber() {
   function btnFilterByNumber() {
     setFilterByNumericValues([selectFilterNumber]);
 
+    console.log(filteredData);
     let filterNumericData = [];
     switch (selectFilterNumber.comparison) {
     case 'maior que': filterNumericData = filteredData.filter((element) => (
