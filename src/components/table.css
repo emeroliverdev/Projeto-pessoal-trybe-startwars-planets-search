@@ -22,3 +22,12 @@ td, th {
   padding: 0;
 }
 
+.btn-deleted-filter {
+  background-color: red;
+  color: white;
+}
+
+.div-deleted-filter {
+  color: #4f4f4f;
+}
+

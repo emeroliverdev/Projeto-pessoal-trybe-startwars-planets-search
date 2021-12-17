@@ -3,16 +3,40 @@ import StartWarsContext from '../context/StartWarsContext';
 import './table.css';
 
 function Table() {
-  const { data, searchName } = useContext(StartWarsContext);
+  const { data, searchName, filterByNumericValues,
+    setFilterByNumericValues, optionsSelect, setOptionsSelect, filteredData, setData,
+  } = useContext(StartWarsContext);
   const { filterByName } = searchName;
   const { name } = filterByName;
-  // console.log(filterByName);
 
   const planetFilterByName = data.filter((planet) => planet.name.toLowerCase()
     .includes(name.toLowerCase()));
 
+  function deleteFilter({ target }) {
+    setOptionsSelect([...optionsSelect, filterByNumericValues[target.id].column]);
+    setFilterByNumericValues(
+      filterByNumericValues
+        .filter((element) => element !== filterByNumericValues[target.id]),
+    );
+    setData(filteredData);
+  }
+
   return (
     <div>
+      { filterByNumericValues.length > 0
+        ? (filterByNumericValues.map((element, index) => (
+          <div key={ index } data-testid="filter" className="div-deleted-filter">
+            {`${element.column} ${element.comparison} ${element.value}`}
+            <button
+              type="button"
+              id={ index }
+              className="btn-deleted-filter"
+              onClick={ deleteFilter }
+            >
+              X
+            </button>
+          </div>
+        ))) : ''}
       <table>
         <thead>
           <tr>

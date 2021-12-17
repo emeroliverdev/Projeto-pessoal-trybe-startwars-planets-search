@@ -1,0 +1,47 @@
+.select-filter {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 450px;
+}
+
+.input-value {
+  border: solid 1px;
+  border-radius: 3px;
+  height: 19px;
+  margin-right: 6px;
+  padding: 0;
+  width: 107px;
+}
+
+.input-comparison {
+  border: solid 1px;
+  border-radius: 3px;
+  height: 21px;
+  padding: 0;
+  width: 109px;
+}
+
+.input-column {
+  border: solid 1px;
+  border-radius: 3px;
+  height: 21px;
+  padding: 0;
+  width: 109px;
+}
+
+.btn-filter {
+  background-color: dodgerblue;
+  border: 2px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 800;
+  height: 21px;
+  padding: 0;
+  width: 70px;
+}
+
+.value-filter {
+  align-content: center;
+  display: flex;
+}

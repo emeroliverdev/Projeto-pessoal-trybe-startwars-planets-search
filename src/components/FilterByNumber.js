@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import StartWarsContext from '../context/StartWarsContext';
+import './filterByNumber.css';
 
 function FilterByNumber() {
   const {
     setFilterByNumericValues, selectFilterNumber, setSelectFilterNumber,
-    filteredData, setData, optionsSelect, setOptionsSelect,
+    filteredData, setData, optionsSelect, setOptionsSelect, filterByNumericValues,
   } = useContext(StartWarsContext);
 
   function handleChange({ target }) {
@@ -13,9 +14,8 @@ function FilterByNumber() {
   }
 
   function btnFilterByNumber() {
-    setFilterByNumericValues([selectFilterNumber]);
+    setFilterByNumericValues([...filterByNumericValues, selectFilterNumber]);
 
-    console.log(filteredData);
     let filterNumericData = [];
     switch (selectFilterNumber.comparison) {
     case 'maior que': filterNumericData = filteredData.filter((element) => (
@@ -40,12 +40,13 @@ function FilterByNumber() {
   const selectComparison = ['maior que', 'menor que', 'igual a'];
 
   return (
-    <div>
+    <div className="select-filter">
       <select
         data-testid="column-filter"
         value={ selectFilterNumber.column }
         onChange={ handleChange }
         name="column"
+        className="input-column"
       >
         { optionsSelect.map((element) => (
           <option key={ element }>{ element }</option>
@@ -56,25 +57,30 @@ function FilterByNumber() {
         value={ selectFilterNumber.comparison }
         onChange={ handleChange }
         name="comparison"
+        className="input-comparison"
       >
         { selectComparison.map((element) => (
           <option key={ element }>{ element }</option>
         )) }
       </select>
-      <input
-        data-testid="value-filter"
-        type="number"
-        value={ selectFilterNumber.value }
-        onChange={ handleChange }
-        name="value"
-      />
-      <button
-        data-testid="button-filter"
-        type="button"
-        onClick={ btnFilterByNumber }
-      >
-        Filtrar
-      </button>
+      <div className="value-filter">
+        <input
+          data-testid="value-filter"
+          type="number"
+          value={ selectFilterNumber.value }
+          onChange={ handleChange }
+          name="value"
+          className="input-value"
+        />
+        <button
+          data-testid="button-filter"
+          type="button"
+          onClick={ btnFilterByNumber }
+          className="btn-filter"
+        >
+          Filtrar
+        </button>
+      </div>
     </div>
   );
 }
