@@ -42,6 +42,7 @@ function StartWarsProvider({ children }) {
 
   useEffect(() => {
     fetchStartWars();
+    document.title = 'Star Wars - Project';
   }, []);
 
   return (

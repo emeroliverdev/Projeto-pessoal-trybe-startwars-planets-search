@@ -24,10 +24,30 @@ td, th {
 
 .btn-deleted-filter {
   background-color: red;
+  border: 0;
+  border-radius: 10px;
   color: white;
+  width: 20px;
 }
 
 .div-deleted-filter {
+  align-items: center;
+  background-color: white;
+  border: 1px dashed #4f4f4f;
+  border-radius: 10px;
   color: #4f4f4f;
+  display: flex;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  height: 21px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 240px;
 }
 
+.div-input-bnt {
+  background-color: #4f4f4f;
+}

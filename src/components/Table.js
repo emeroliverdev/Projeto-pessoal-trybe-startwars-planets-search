@@ -25,16 +25,18 @@ function Table() {
     <div>
       { filterByNumericValues.length > 0
         ? (filterByNumericValues.map((element, index) => (
-          <div key={ index } data-testid="filter" className="div-deleted-filter">
-            {`${element.column} ${element.comparison} ${element.value}`}
-            <button
-              type="button"
-              id={ index }
-              className="btn-deleted-filter"
-              onClick={ deleteFilter }
-            >
-              X
-            </button>
+          <div key={ index } className="div-input-bnt">
+            <div key={ index } data-testid="filter" className="div-deleted-filter">
+              <p>{`${element.column} ${element.comparison} ${element.value}`}</p>
+              <button
+                type="button"
+                id={ index }
+                className="btn-deleted-filter"
+                onClick={ deleteFilter }
+              >
+                X
+              </button>
+            </div>
           </div>
         ))) : ''}
       <table>
